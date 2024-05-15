@@ -26,14 +26,18 @@
                   {% endif %}
                   <!-- <a class="nav-link active" href="{{url_for('blplogin.logout_employee')}}">Logout</a> -->
                   <a class="nav-link active " aria-disabled="true" href="{{url_for('blpSignup.signupview')}}">Signup</a>
+                  <a class="nav-link active" aria-current="page" href="">Details</a>
                 </div>
               </div>
             </div>
           </nav>
     </div>
-
+                
                 {% if username %}
                     <h1>Welcome, {{ username }}!</h1>
+                    {{current_user.job_role}}
+                    {{current_user.salary}}
+                    {{current_user.joining_date}}
                 {% else %}
                     <h1>Welcome to Home !!</h1>
                 {% endif %}

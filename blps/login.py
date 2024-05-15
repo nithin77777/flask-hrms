@@ -52,7 +52,8 @@ def logout_employee():
 @login_required
 def home(username=None):
     if not username:
-        username = request.args.get('username', None)
+        username = request.args.get('username', current_user.username)
+        print(username)
     response = make_response(render_template('home.html', username=username))
     response.headers['Cache-Control'] = 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0, max-age=0'
     response.headers['Pragma'] = 'no-cache'

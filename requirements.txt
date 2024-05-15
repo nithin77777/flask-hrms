@@ -6,3 +6,4 @@ marshmallow
 flask-bcrypt
 python-dotenv
 WTForms
+Authlib

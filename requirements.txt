@@ -1,0 +1,8 @@
+flask
+flask-login
+flask-smorest
+flask-sqlalchemy
+marshmallow
+flask-bcrypt
+python-dotenv
+WTForms

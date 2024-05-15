@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='/bootstrap-5.3.3-dist/css/bootstrap.min.css')}}">
+    <meta charset="UTF">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="{{url_for('static',filename='/bootstrap-5.3.3-dist/js/bootstrap.min.js')}}"></script>
+</head>
+<body>
+    
+    <h1 class="text-center">Signup Form</h1>
+
+    <div class="error">
+        {% with messages = get_flashed_messages() %}
+        {% for message in messages %}
+
+        {% if message %}
+        <div class="errormain">{{message}}</div>
+        {% endif %}
+
+        {% endfor %}
+        {% endwith %}
+    </div>
+    <h3 class="text-center">Enter Your Details Below:</h3>
+    
+    <div class="container signup-wrap">
+
+        <form action="{{url_for('blpSignup.signupview')}}" method="post">
+            {{ form.csrf_token }}
+
+        <div class="form-label">{{ form.username.label }}: </div>
+            {{ form.username(class="form-control") }}
+        <div class="form-label">{{ form.password.label }}: </div>
+        {{ form.password(class="form-control") }}
+        <div class="form-label">{{ form.confirm_password.label }}: </div>
+        {{ form.confirm_password(class="form-control") }}
+        <div class="form-label">{{ form.identity_card.label }}: </div>
+        {{ form.identity_card(class="form-control") }}
+        <div class="form-label">{{ form.pan_card.label }}: </div>
+        {{ form.pan_card(class="form-control") }}
+        <div class="form-label">{{ form.job_role.label }}: </div>
+        {{ form.job_role(class="form-control") }}
+        <div class="form-label">{{ form.salary.label }}: </div>
+        {{ form.salary(class="form-control") }}
+        <div class="form-label">{{ form.joining_date.label }}: </div>
+        {{ form.joining_date(class="form-control") }}
+           
+        {{ form.submit(class='btn btn-danger mt-5') }}
+    
+
+        </form>
+    </div>
+    
+    
+</body>
+</html>

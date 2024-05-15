@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='/bootstrap-5.3.3-dist/css/bootstrap.min.css')}}">
+    <script src="{{url_for('static',filename='/bootstrap-5.3.3-dist/js/bootstrap.min.js')}}"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <header>
+    </header>
+    <form action="{{url_for('blplogin.loginview')}}" method="post">
+        {{form.csrf}}
+
+        <div class="container">
+            <div class="row">
+                <div class="title">
+                    <h4>Login</h4>
+                </div>
+                <div class="col-md-6">
+                    {{ form.username.label(class='form-label') }} {{form.username(class='form-control')}}   
+                </div>
+                <div class="col-md-6">
+                    {{ form.password.label(class='form-label') }} {{form.password(class='form-control')}}
+                </div>
+
+                {{form.submit(class='btn btn-primary mt-5')}}
+            </div>
+        </div>
+
+    </form>
+</body>
+</html>
